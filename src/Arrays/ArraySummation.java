@@ -1,6 +1,12 @@
 package Arrays;
 
 public class ArraySummation {
+//    SET total TO zero
+//    LOOP FROM first element in array TO last element in array
+//            BEGIN
+//    SET total TO total + value of current element
+//    END
+//    RETURN total
 
     //runner method
     public static void main(String[] args) {
