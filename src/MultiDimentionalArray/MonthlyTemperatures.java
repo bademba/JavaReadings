@@ -21,12 +21,12 @@ public class MonthlyTemperatures {
                         break;
                 case'2': displayAllTemps(temperature);
                         break;
-                case'3': displayWeek(temperature);
-                        break;
-                case'4': displayDays(temperature);
-                        break;
-                case'5': System.out.println("Goodbye");
-                         break;
+//                case'3': displayWeek(temperature);
+//                        break;
+//                case'4': displayDays(temperature);
+//                        break;
+//                case'5': System.out.println("Goodbye");
+//                         break;
                 default:
                     System.out.println("Error: options 1-5 only");
             }
@@ -36,14 +36,28 @@ public class MonthlyTemperatures {
     static void enterTemps(double[][] temepratureIn){
         Scanner keyboard = new Scanner(System.in);
         //outer loop controls week number
-        for(int week =1;week<temepratureIn.length;week++){
+        for(int week =1;week<=temepratureIn.length;week++){
 
             //inner loop controls day number
-            for (int day=1;day<temepratureIn[0].length;day++){
-                System.out.println("Enter temperature of the week"+week+ "and day"+ day);
+            for (int day=1;day<=temepratureIn[0].length;day++){
+                System.out.println("Enter temperature of the week " +week+ " and day "+ day);
                 temepratureIn[week-1][day-1]=keyboard.nextDouble();
             }
         }
+    }
+
+    //method to display  all temperatures in 2D array reuires a nested loop
+    static void displayAllTemps(double[][] temepartureIn){
+        System.out.println();
+        System.out.println("***TEMPERATURES ENTERED****");
+        //outer loop controls week number
+        for (int week=1; week<=temepartureIn.length;week++){
+            //inner loop control day number
+            for (int day=1;day<=temepartureIn[0].length;day++){
+                System.out.println("week "+week +" day " +day +temepartureIn[week-1][day-1]);
+            }
+        }
+
     }
 
 }
