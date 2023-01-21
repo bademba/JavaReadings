@@ -30,6 +30,20 @@ public class MonthlyTemperatures {
                 default:
                     System.out.println("Error: options 1-5 only");
             }
+        }while(choice !='5');
+    }
+    //method to enter temperatures into 2D requires a nested loop
+    static void enterTemps(double[][] temepratureIn){
+        Scanner keyboard = new Scanner(System.in);
+        //outer loop controls week number
+        for(int week =1;week<temepratureIn.length;week++){
+
+            //inner loop controls day number
+            for (int day=1;day<temepratureIn[0].length;day++){
+                System.out.println("Enter temperature of the week"+week+ "and day"+ day);
+                temepratureIn[week-1][day-1]=keyboard.nextDouble();
+            }
         }
     }
+
 }
