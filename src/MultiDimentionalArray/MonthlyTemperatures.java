@@ -23,10 +23,10 @@ public class MonthlyTemperatures {
                         break;
                 case'3': displayWeek(temperature);
                         break;
-//                case'4': displayDays(temperature);
-//                        break;
-//                case'5': System.out.println("Goodbye");
-//                         break;
+                case'4': displayDays(temperature);
+                        break;
+                case'5': System.out.println("Goodbye");
+                         break;
                 default:
                     System.out.println("Error: options 1-5 only");
             }
@@ -54,7 +54,7 @@ public class MonthlyTemperatures {
         for (int week=1; week<=temepartureIn.length;week++){
             //inner loop control day number
             for (int day=1;day<=temepartureIn[0].length;day++){
-                System.out.println("week "+week +" day " +" "+day +temepartureIn[week-1][day-1]);
+                System.out.println("week "+week +" day " +" "+day+" " +temepartureIn[week-1][day-1]);
             }
         }
 
@@ -79,6 +79,31 @@ public class MonthlyTemperatures {
         //week number is fixed so loop required to process day number only
         for(int day=1;day<=temperatureIn[0].length;day++){
             System.out.println("week "+week+" day "+day+": "+temperatureIn[week-1][day-1]);
+        }
+    }
+
+    //method display temperature for a single day of each week requires a single loop
+    static void displayDays(double[][] temeperatureIn){
+        Scanner keyboard = new Scanner(System.in);
+        int day;
+
+        //enter day number
+        System.out.println("ENter day number(1-7): ");
+        day=keyboard.nextInt();
+        //input validation : day number should be between 1 and 7
+        while(day<1||day>7){
+            System.out.println("INvalid day number!!");
+            System.out.println("Enter again (1-7): ");
+            day=keyboard.nextInt();
+        }
+        //display temeperatures for a given day of the week
+        System.out.println();
+        System.out.println("***TEMEPERATURES ENTERED FOR DAY "+day+ "***");
+        System.out.println();
+
+        //day number is fixed so loop required to process week numbers only
+        for(int week  =1;week<=temeperatureIn.length;week++){
+            System.out.println("week "+week+" day "+day+" :"+temeperatureIn[week-1][day-1]);
         }
     }
 
