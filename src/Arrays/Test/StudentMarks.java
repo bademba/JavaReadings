@@ -8,6 +8,12 @@ public class StudentMarks {
         //enterExamMarks();
         enterExamMarks2(javaStudents);
         increaseMarks(javaStudents);
+        allHavePassed(javaStudents);
+        if(allHavePassed(javaStudents)==true){
+            System.out.println("TRUE");
+        }else {
+            System.out.println("FALSE");
+        }
     }
 
 //    static int[] enterExamMarks(){
@@ -34,8 +40,16 @@ public class StudentMarks {
         for (int i=0;i< marks.length;i++){
             marks[i]=marks[i]+5;
             System.out.println(marks[i]);
-           // System.out.println("Marks after increase: "+(marks[i]+5));
         }
 
+    }
+
+    static boolean allHavePassed(int[] marks){
+        for(int i=0;i<marks.length;i++){
+            if(marks[i]>40){
+                return true;
+            }
+        }
+        return false;
     }
 }
