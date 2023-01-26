@@ -5,17 +5,27 @@ import java.util.Scanner;
 public class StudentMarks {
     public static void main(String[] args) {
         int[] javaStudents=new int[3];
-        enterMarks(javaStudents);
+        enterExamMarks();
+        increaseMarks(javaStudents);
     }
 
-    static void enterMarks(int[] studentMarks){
+    static int[] enterExamMarks(){
         Scanner keyboard = new Scanner(System.in);
-        for (int i=0;i<studentMarks.length;i++){
-            System.out.println();
-            System.out.print("Enter marks [" +"] : ");
-            studentMarks[i]=keyboard.nextInt();
-            System.out.println(studentMarks[i]);
+        int[] marksOut =new int[3];
+        for (int i=0;i<marksOut.length;i++){
+             System.out.print("Enter marks [" +"] : ");
+            marksOut[i]=keyboard.nextInt();
+         }
+         return marksOut;
+    }
+
+    static  void increaseMarks(int[] marks){
+        System.out.println();
+        System.out.println("***INCREASED MARKS***");
+        for (int i=0;i< marks.length;i++){
+            marks[i]=marks[i]+5;
+            System.out.println("Marks after increase: "+marks[i]);
         }
-        //studentMarks=keyboard.nextInt();
+
     }
 }
